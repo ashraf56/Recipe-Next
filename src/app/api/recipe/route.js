@@ -3,12 +3,12 @@ import { NextResponse } from "next/server";
 
 export const POST = async (request) => {
 
-    const blogData = await request.json();
+    const recipiData = await request.json();
     
     const { db } = await connectToDatabase();
     try {
 
-        const result = await db.collection('Recipes').insertOne(blogData);
+        const result = await db.collection('Recipes').insertOne(recipiData);
         console.log(result);
         return NextResponse.json(result);
 
@@ -16,6 +16,7 @@ export const POST = async (request) => {
         return NextResponse.json({ message: err.toString() });
     }
 }
+
 export const GET = async () => {
 
     const { db } = await connectToDatabase();

@@ -1,12 +1,16 @@
-'use client'
-import Link from 'next/link';
-import React, { useContext } from 'react';
 
-const Allrecipe = () => {
-    
+
+import getAllRecipe from '@/util/getAllRecipe';
+import React from 'react';
+
+const Allrecipe = async() => {
+    const allRecipe = await  getAllRecipe()
+    console.log(allRecipe);
     return (
         <div>
-            
+            {allRecipe.map(all => (
+                <div>{all.name}</div>
+            ))}
         </div>
     );
 };

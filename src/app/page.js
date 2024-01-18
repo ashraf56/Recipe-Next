@@ -1,4 +1,3 @@
-import ingredients from '../../ingredients.json'
 import Allrecipe from './component/Allrecipe/Allrecipe'
 
 export default function Home() {
