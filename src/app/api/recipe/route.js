@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export const POST = async (request) => {
 
     const recipiData = await request.json();
-    
+
     const { db } = await connectToDatabase();
     try {
 
@@ -30,8 +30,9 @@ export const GET = async () => {
     }
 }
 
-export const DELETE = async (request)=>{
-    const id =  request.nextUrl.searchParams.get('id')
+export const DELETE = async (request) => {
+    const id = request.nextUrl.searchParams.get('id')
     const { db } = await connectToDatabase();
-    const res= await db.collection('Recipes').deleteOne({_id: new ObjectId(id)})
-    return NextResponse.json(res)}
+    const res = await db.collection('Recipes').deleteOne({ _id: new ObjectId(id) })
+    return NextResponse.json(res)
+}

@@ -14,26 +14,26 @@ const Allrecipe = async () => {
                 {allRecipe.length === 0 ? <span className="loading loading-ring loading-lg"></span> :
                     allRecipe?.map(all => (
                         <div key={all._id}>
-                            
+
                             <div className="card w-96 bg-base-100 h-full shadow-xl">
                                 <div className="card-body h-full">
                                     <h2 className="card-title">
-                                    {all?.title}   </h2>
-                                    
+                                        {all?.title}   </h2>
+
                                     <div className=" card-actions flex gap-3  mt-10">
-                                 <Link href={`/updaterecipe/${all?._id}`}>
-                                <button className='btn btn-error btn-sm'>
-                                       Update
-                                    </button></Link>
-                                    <Deletebutton _id={all._id} />
-                                  <Link href={`/recipedetail/${all._id}`}>  <button className="btn btn-sm btn-primary">
-                                        Details
-                                    </button></Link>
-                               
+                                        <Link href={`/updaterecipe/${all?._id}`}>
+                                            <button className='btn btn-error btn-sm'>
+                                                Update
+                                            </button></Link>
+                                        <Deletebutton _id={all._id} />
+                                        <Link href={`/recipedetail/${all._id}`}>  <button className="btn btn-sm btn-primary">
+                                            Details
+                                        </button></Link>
+
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div>
 
                             </div>

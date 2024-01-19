@@ -5,7 +5,7 @@ import React from 'react';
 const Details = async ({ params }) => {
     let { id } = params
     const recipeDetail = await getSingleRecipe(id)
-    let index = 0
+    
     return (
         <div className='p-10'>
             <div className='card'>

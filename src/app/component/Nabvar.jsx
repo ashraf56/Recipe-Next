@@ -27,7 +27,7 @@ const Nabvar = () => {
   }
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-200">
         <div className="navbar-start">
 
           <a className="btn btn-ghost text-xl">Next Recipe</a>

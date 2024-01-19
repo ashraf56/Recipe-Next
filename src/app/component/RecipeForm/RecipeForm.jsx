@@ -57,7 +57,7 @@ const RecipeForm = () => {
     <div>
       <div className='card-body max-w-5xl'>
         <div>
-        <h1 className="text-2xl font-bold">Add recipe</h1>
+          <h1 className="text-2xl font-bold">Add recipe</h1>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
