@@ -19,10 +19,12 @@ const Allrecipe = async () => {
 
                                 <div>
                                     <h3 className="font-bold">{all?.title}</h3>
-
+                                    <button>
+                                        <Link href={`/updaterecipe/${all?._id}`}>Update</Link>
+                                    </button>
                                 </div>
                                 <div className='flex'>
-                                    <Deletebutton _id={all._id}/>
+                                    <Deletebutton _id={all._id} />
                                     <button className="btn btn-sm btn-primary">
                                         <Link href={`/recipedetail/${all._id}`}>Details</Link>
                                     </button>
