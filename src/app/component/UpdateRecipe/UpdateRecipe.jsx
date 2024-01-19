@@ -93,14 +93,6 @@ const UpdateRecipe = ({ updateRecipes }) => {
                 className="basic-multi-select  dark:text-black"
 
               />
-
-              <div >
-                <ul className="menu bg-base-200 w-56 rounded-box">{updateRecipes?.ingredients?.map((i,index)=> 
-                
-                <li key={i}><a><span>{index+1}</span>{i}</a></li>
-               
-             
-                )} </ul></div>
             </div>
           </div>
           {errors.name && (
