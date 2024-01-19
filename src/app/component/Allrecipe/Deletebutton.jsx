@@ -1,8 +1,11 @@
 'use client'
+import { AuthContext } from '@/app/context/ContextHome';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useContext } from 'react';
 
 const Deletebutton = ({ _id }) => {
+  let { user } = useContext(AuthContext)
   const router = useRouter();
   let handleDElete = async () => {
     try {
@@ -19,10 +22,14 @@ const Deletebutton = ({ _id }) => {
     }
   }
   return (
-    <div>
-      <button onClick={handleDElete} className='btn  btn-sm'>
-        Delete
-      </button>
+    <div className='flex gap-3'>
+      {user && <> <Link href={`/updaterecipe/${_id}`}>
+        <button className='btn btn-error btn-sm'>
+          Update
+        </button></Link>
+        <button onClick={handleDElete} className='btn  btn-sm'>
+          Delete
+        </button></>}
     </div>
   );
 };
