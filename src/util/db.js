@@ -6,8 +6,6 @@ let cachedClient = null;
 let cachedDb = null;
 const OPTIONS = {
 
-  useNewUrlParser: true,
-
   useUnifiedTopology: true,
 
 };

@@ -7,13 +7,10 @@ const RHome = () => {
  
     return (
         <div>
-         <div className="hero  bg-base-200">
-  <div className="hero-content flex-col ">
-    <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold">Login now!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-    </div>
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+         <div className=" bg-base-100 mx-auto ">
+  <div className="hero-content mx-auto">
+    
+    <div className="card  w-full max-w-4xl shadow-2xl bg-base-300">
       <RecipeForm></RecipeForm>
     </div>
   </div>

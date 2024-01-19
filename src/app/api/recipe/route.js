@@ -1,4 +1,5 @@
 import { connectToDatabase } from "@/util/db";
+import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
 
 export const POST = async (request) => {
@@ -28,3 +29,9 @@ export const GET = async () => {
         return NextResponse.json({ message: err.toString() });
     }
 }
+
+export const DELETE = async (request)=>{
+    const id =  request.nextUrl.searchParams.get('id')
+    const { db } = await connectToDatabase();
+    const res= await db.collection('Recipes').deleteOne({_id: new ObjectId(id)})
+    return NextResponse.json(res)}
