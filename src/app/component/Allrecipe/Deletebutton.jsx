@@ -22,7 +22,7 @@ const Deletebutton = ({ _id }) => {
     }
   }
   return (
-    <div className='flex gap-3'>
+    <div className='flex gap-3 '>
       {user && <> <Link href={`/updaterecipe/${_id}`}>
         <button className='btn btn-error btn-sm'>
           Update

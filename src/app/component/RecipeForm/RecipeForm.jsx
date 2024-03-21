@@ -5,7 +5,8 @@ import { options } from '../../../../ingredients';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { useRouter } from 'next/navigation';
-
+import { IoFastFood } from "react-icons/io5";
+import toast, { Toaster } from 'react-hot-toast';
 const animatedComponents = makeAnimated()
 
 const RecipeForm = () => {
@@ -42,7 +43,7 @@ const RecipeForm = () => {
         })
       const Allrecipe = await result.json()
       if (Allrecipe) {
-        alert('data added')
+        toast.success('added ')
       } else {
         throw new Error("Failed to add");
       }
@@ -57,7 +58,7 @@ const RecipeForm = () => {
     <div>
       <div className='card-body max-w-5xl'>
         <div>
-          <h1 className="text-2xl font-bold">Add recipe</h1>
+          <h1 className="text-2xl font-bold flex gap-2"><IoFastFood /> Add recipe </h1>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
@@ -106,7 +107,7 @@ const RecipeForm = () => {
           </div>
         </form>
 
-
+        <Toaster></Toaster>
 
       </div>
     </div>

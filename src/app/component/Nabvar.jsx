@@ -3,7 +3,9 @@
 import Link from 'next/link';
 import React, { useContext } from 'react';
 import { AuthContext } from '../context/ContextHome';
-
+import { IoBagAdd } from "react-icons/io5";
+import { PiBowlFoodFill } from "react-icons/pi";
+import { FaHome } from "react-icons/fa";
 const Nabvar = () => {
   let { user, googleLogin, logout } = useContext(AuthContext)
 
@@ -30,16 +32,16 @@ const Nabvar = () => {
       <div className="navbar bg-base-200">
         <div className="navbar-start">
 
-          <a className="btn btn-ghost text-xl">Next Recipe</a>
+          <a className="btn btn-ghost text-xl text-white"> <PiBowlFoodFill /> Next Recipe</a>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 uppercase">
             <li>
-              <Link href={'/'}>Home</Link>
+              <Link href={'/'}><FaHome />  Home</Link>
             </li>
             {/* If user is not available Add recipe will be invisible */}
             {user && <li>
-              <Link href={'/addrecipe'}>Add a recipe</Link>
+              <Link href={'/addrecipe'}><IoBagAdd /> Add a recipe </Link>
             </li>}
 
             {/* user auth */}

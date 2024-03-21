@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 import { useForm } from 'react-hook-form';
 import { options } from '../../../../ingredients';
+import { IoFastFood } from "react-icons/io5";
+import toast, { Toaster } from 'react-hot-toast';
 
 const UpdateRecipe = ({ updateRecipes }) => {
   const router = useRouter();
@@ -38,7 +40,7 @@ const UpdateRecipe = ({ updateRecipes }) => {
         })
       const Allrecipe = await result.json()
       if (Allrecipe) {
-        alert('data updated')
+        toast.success('data updated')
       } else {
         throw new Error("Failed to update");
       }
@@ -53,7 +55,7 @@ const UpdateRecipe = ({ updateRecipes }) => {
     <div className='card max-w-3xl mx-auto shadow-2xl mt-10'>
       <div className='card-body max-w-5xl'>
         <div>
-          <h1 className="text-2xl font-bold">Update a recipe</h1>
+          <h1 className="text-2xl font-bold flex gap-2"><IoFastFood /> Update recipe </h1>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
@@ -108,7 +110,7 @@ const UpdateRecipe = ({ updateRecipes }) => {
         </form>
 
 
-
+        <Toaster></Toaster>
       </div>
     </div>
   );
